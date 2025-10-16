@@ -12,6 +12,7 @@ This application allows users to enter a GitHub username and an optional token t
 ## Round 2 Updates
 - Added functionality to cache the last successful lookup in localStorage under "github-user-${seed}"
 - Repopulates the form on load with the cached data
+- Implemented an aria-live alert #github-status that reports lookup status (in progress, successful, or failed)
 
 ## Installation
 Simply open the index.html file in a web browser to run the application.
