@@ -51,9 +51,18 @@
                 const formattedDate = createdAt.toISOString().split('T')[0];
                 
                 createdAtDisplay.textContent = formattedDate;
+                
+                localStorage.setItem(`github-user-${username}`, formattedDate);
             } catch (error) {
                 console.error("Error:", error.message);
                 createdAtDisplay.textContent = "Error fetching user data";
+            }
+        });
+
+        window.addEventListener("load", function() {
+            const lastLookup = localStorage.getItem(`github-user-${document.querySelector("#github-username").value}`);
+            if (lastLookup) {
+                document.querySelector("#github-created-at").textContent = lastLookup;
             }
         });
     </script>
